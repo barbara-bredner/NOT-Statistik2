@@ -1,5 +1,6 @@
 # NOT-Statistik, 2. Auflage
-Barbara Bredner [2021] „**NOT-Statistik. Nachweise führen, Optimierungen finden, Toleranzen berechnen mit Minitab und R**“  
+Barbara Bredner [2021]  
+„**NOT-Statistik. Nachweise führen, Optimierungen finden, Toleranzen berechnen mit Minitab und R**“  
 Verlag tredition GmbH, ISBN 978-3-347-00481-8, 2. überarbeitete und ergänzte Auflage
 
 ## Was ist NOT-Statistik?
