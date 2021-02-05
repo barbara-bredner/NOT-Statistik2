@@ -1,0 +1,4 @@
+Sample 480 'Durchmesser' 'Ri' 'btrDurchmesser' 'btrRi';
+Replace.
+Let 'btrR2' = 1-SSQ('btrRi'-MEAN('btrRi'))/SSQ('btrDurchmesser'-MEAN('btrDurchmesser'))
+Stack 'btrR2' 'btrRQd' 'btrRQd'

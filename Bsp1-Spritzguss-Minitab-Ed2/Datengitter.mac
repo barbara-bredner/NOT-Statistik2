@@ -1,0 +1,58 @@
+Macro
+Datengitter anfang ende anzahl Replik;
+Ausgabe Col.1-Col.n0.
+
+#########################################################
+#
+# Beispiel: Die Spalten
+#
+# Anfang	Ende	Anzahl
+# 4     	5	10
+# 7	        9	10
+# 2     	7	30
+#
+# geben folgendes an:
+# 
+# Anfang: Den jeweiligen Anfangswert für das Gitter.
+# Ende:   Den jeweiligen Endpunkt.
+# Anzahl: Die jeweilige Anzahl an Punkten zwischen
+#         Anfang und Ende (einschließlich Start-
+#         und Endpunkt).
+#
+# Wenn jeder Giterpunkt 4 Mal repliziert werden soll, und
+# die Gitterwerte in die Spalten C5, C6 und C7 gespeichert
+# werden sollen, so ist der Befehl:
+#
+# %Datengitter 'Anfang' 'Ende' 'Anzahl' 4;
+# Ausgabe C5 C6 C7.
+#
+#########################################################
+
+MConstants Von Bis anz Schritt Sequenz n0 i Replik Wert
+MColumns anfang ende anzahl
+MColumns Col.1-Col.n0
+
+Let anz = 1
+Let Sequenz = 1
+Let Wert = Replik*Exp(Sum(Ln(anzahl)))
+
+Let n0 = N(anfang)
+Let i = 1
+
+While i <= n0
+
+Let Sequenz = Round(Sequenz*anz)
+Let Von = anfang(i)
+Let Bis = ende(i)
+Let anz = anzahl(i)
+Let Schritt = (Bis-Von)/(anz-1)
+Let Wert = Round(Wert/anz)
+# Print Wert Sequenz.
+Set Col.i
+  Sequenz( Von : Bis / Schritt )Wert
+End
+
+Let i = i+1
+EndWhile
+
+EndMacro

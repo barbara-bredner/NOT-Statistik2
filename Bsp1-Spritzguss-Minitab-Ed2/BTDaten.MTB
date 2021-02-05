@@ -1,0 +1,13 @@
+Sample 480 'ESZ' 'NDH' 'NDZ' 'WTemp' 'Typ' 'Durchmesser' 'btdESZ' 'btdNDH' 'btdNDZ' 'btdWTemp' 'btdTyp' 'btdDurchmesser';
+Replace.
+Regress;
+Response 'btdDurchmesser';
+Nodefault;
+Continuous 'btdESZ' 'btdNDH' 'btdNDZ' 'btdWTemp';
+Categorical 'btdTyp';
+Terms btdESZ btdNDH btdNDZ btdWTemp btdTyp btdESZ*btdNDH btdNDZ*btdWTemp btdNDZ*btdTyp;
+Constant;
+Unstandardized;
+Residuals 'RESI'.
+Let 'btdR2' = 1-SSQ('RESI'-MEAN('RESI'))/SSQ('btdDurchmesser'-MEAN('btdDurchmesser'))
+Stack 'btdR2' 'btdRQd' 'btdRQd'

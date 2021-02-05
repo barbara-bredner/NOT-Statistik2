@@ -1,0 +1,20 @@
+Sample 480 'Ri' 'btRi';
+Replace.
+Let 'yStern' = 'ANPASS'+'btRi'
+Regress;
+Response 'yStern';
+Nodefault;
+Continuous 'ESZ' 'NDH' 'NDZ' 'WTemp';
+Categorical 'Typ';
+Terms ESZ NDH NDZ WTemp Typ ESZ*NDH NDZ*WTemp NDZ*Typ;
+Constant;
+Unstandardized.
+Predict 'yStern';
+Nodefault;
+CPredictors 'P_ESZ' 'P_NDH' 'P_NDZ' 'P_WTemp' 'P_Typ';
+Confidence 99,9937;
+PFITS 'PANPASS_2'.
+Sample 2 'Ri'  'PeStern';
+Replace.
+Let 'deltaStern' = 'PANPASS_2'-('PANPASS_1'+'PeStern')
+Stack 'deltaStern' 'Pdelta' 'Pdelta'
